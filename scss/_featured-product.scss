@@ -169,6 +169,7 @@ main {
                 // linea
                 .featured-product__hr {
                     margin: 25px 0;
+                    border-top: 1px solid $color-bordes;
                 }
                 // Detalles
                 .featured-product-cont-text__details {
@@ -333,7 +334,7 @@ main {
         }
     }
 } 
-/* --- Responsive 640px --- *//* Producto Destacado */
+/* --- Responsive 1000px --- *//* Producto Destacado */
 @media screen and (min-width:1000px) {
     // main
     main {
