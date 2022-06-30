@@ -1,0 +1,301 @@
+/* --- --- Algunos Productos --- --- */ 
+// main
+main {
+    // Container Some Product
+    .container-some-product {
+        // Algunos Productos
+        .some-product {
+            width: 100%;
+            margin: 0 0 50px 0;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr min-content;
+
+            background-color: #00afdd;
+
+            // extend
+            &--red {
+                @extend .some-product;
+                background-color: #e6312d;
+            }
+
+            // Productos
+            .some-product__products {
+                padding: 21px 0px 21px 18px;
+                min-width: 100%;
+
+                // extend
+                &--grid-row-2-3 {
+                    @extend .some-product__products;
+                    grid-row: 2/3;
+                } 
+
+                // Contenedor de cartas // scroll
+                .some-product__cont-cards-scroll {
+                    overflow-x: scroll;
+                    // Contenedor de cartas
+                    .some-product-cont-cards {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        width: 500%;
+
+                        // Carta
+                        .some-product__card {
+                            flex-basis: 50%;
+
+                            background-color: $color-blanco;
+                            border-right: 1px solid $color-bordes;
+
+                            // last-child
+                            &:last-child {
+                                border-right: none;
+                            }
+
+                            // anchor
+                            .some-product-card__anchor {
+                                padding: 20px;
+
+                                display: flex;
+                                flex-direction: column;
+                                // Cont. de imagen
+                                .some-product-card__cont-img {
+                                    width: 100%;
+
+                                    margin-left: auto;
+                                    margin-right: auto;
+
+                                    position: relative;
+
+                                    padding-bottom: 100%;
+                                    // imagen
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: contain;
+
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        left: 0;
+                                        bottom: 0;
+                                        margin: auto;
+                                    }
+                                    // imagen hover
+                                    .img-hover {
+                                        opacity: 0;
+                                        transition: opacity 0.1s linear;
+                                    }
+                                    // efecto hover 
+                                    &:hover {
+                                        > .img-hover {
+                                            opacity: 1;
+                                        } 
+                                    }    
+                                }
+                                // Nombre del producto
+                                .some-product-card__name {
+                                    font-size: 15px;
+                                    font-weight: 600;
+                                    color: $color-azul-oscuro;
+
+                                    margin-top: 18px;
+                                    margin-bottom: 18px;
+
+                                    transition: color 0.2s linear;
+                                    // hover
+                                    &:hover {
+                                        color: $color-celeste;
+                                    }
+                                }
+                                // Precio
+                                .some-product-card__price {
+                                    font-size: 20px;
+                                    color: $color-celeste;
+
+                                    margin-bottom: 22px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // Texto
+        .some-product__text {
+            // contenido
+            .some-product-text__content {
+                padding: 21px 18px 42px 18px;
+
+                color: $color-blanco;
+
+                // extend
+                &--padding {
+                    @extend .some-product-text__content;
+                    padding: 42px 18px 21px 18px;
+                }
+
+                // h4
+                h4 {
+                    font-size: 23px;
+                    margin-bottom: 18px;
+                }
+                // parrafo
+                p {
+                    line-height: 2;
+                    margin-bottom: 22px;
+                }
+                // button
+                .some-product-text-content__button {
+                    padding: 13px 35px;
+                    background-color: #ff6bca;
+                    cursor: pointer;
+                    // extend
+                    &--yellow {
+                        @extend .some-product-text-content__button;
+                        background-color: #ffd002;
+                    }
+                    
+                    // anchor
+                    .some-product-text-content-button__anchor {
+                        font-size: 18px;
+                        color: #fff;
+                        // extend
+                        &--black {
+                            @extend .some-product-text-content-button__anchor;
+                            color: $color-negro;
+                        }
+                    }
+                    
+                    transition: all 0.3s linear;
+                    // hover
+                    &:hover {
+                        box-shadow: 1px 0.5px 1px 1px #444;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* --- --- Responsive Some Products --- --- */
+/* --- Responsive 645px --- */  
+@media screen and (min-width:645px) {
+    // main
+    main {
+        // Container Some Product
+        .container-some-product {
+            // Algunos Productos
+            .some-product {
+
+                // Productos
+                .some-product__products {
+                    padding-left: 40px;
+
+                    // Contenedor de cartas // scroll
+                    .some-product__cont-cards-scroll {
+
+                        // Contenedor de cartas
+                        .some-product-cont-cards {
+                            width: 300%;
+
+                            // Carta
+                            .some-product__card {
+                                flex-basis: 30%;
+                            }
+                        }
+                    }
+                }
+                // Texto
+                .some-product__text {
+                    // contenido
+                    .some-product-text__content {
+                        padding-left: 39px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* --- Responsive 1000px --- */ 
+@media screen and (min-width:1000px) {
+    // main 
+    main {
+        // Container Some Product
+        .container-some-product {
+            padding: 0 43px;
+            // Algunos Productos
+            .some-product {
+                grid-template-columns: 1.6fr 1fr;
+                grid-template-rows: 1fr;
+                grid-auto-flow: dense;
+
+                border-radius: 5px;
+
+                // extend
+                &--red {
+                    grid-template-columns: 1fr 1.6fr;
+                }
+
+                // Productos
+                .some-product__products {
+                    padding: 6px;
+
+                    // extend
+                    &--grid-row-2-3 {
+                        grid-column: 2/3;
+                        grid-row: 1/3;
+                    }
+
+                    // Contenedor de cartas // scroll
+                    .some-product__cont-cards-scroll {
+                        // Contenedor de cartas
+                        .some-product-cont-cards {
+                            width: 400%;
+                            // Carta
+                            .some-product__card {
+                                flex-basis: 20%;
+                            }
+                        }
+                    }
+                }
+                // Texto
+                .some-product__text {
+                    // contenido
+                    .some-product-text__content {
+                        padding: 40px 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* --- Responsive 1280px --- */ 
+@media screen and (min-width:1280px) {
+    // main
+    main {
+        // Container Some Product
+        .container-some-product {
+            // Algunos Productos
+            .some-product {
+                // Productos
+                .some-product__products {
+                    // Contenedor de cartas // scroll
+                    .some-product__cont-cards-scroll {
+                        // Contenedor de cartas
+                        .some-product-cont-cards {
+                            width: 275%;
+
+                            // Carta
+                            .some-product__card {
+                                flex-basis: 60%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

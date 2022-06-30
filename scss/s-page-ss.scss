@@ -1,0 +1,61 @@
+// Variables
+@import "variables";
+// Iconos de redes
+@import "iconos-redes";
+
+/* --- --- Reset --- --- */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    // body    
+    body {
+        background-color: $color-blanco-body;
+    }
+    main {
+        width: 100%;
+    }
+    // listas
+    li {
+        list-style: none;
+    }
+    // anchor
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    // input
+    input {
+        outline: none
+    }
+    // button
+    button {
+        border: none;
+    }
+    // iconos
+    i {
+        font-size: 23px;
+        color: $color-blanco;
+    }
+}
+
+// Header
+@import "header.scss";
+// Main
+@import "main-page";
+// cambiar el "max-width" de img de .banner
+main {
+    .banner {
+        .banner__cont-img {
+            img {
+                max-width: 50%;
+            }
+        }
+    }
+}
+
+// Extra Products
+@import "extra-product";
+// Footer
+@import "footer";

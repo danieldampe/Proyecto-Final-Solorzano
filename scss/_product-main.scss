@@ -1,0 +1,301 @@
+/* --- --- Producto Principal --- --- */
+// main
+main {
+    // Producto
+    .product-main {
+        width: 100%;
+        // Container
+        .product-main-container {
+            margin-bottom: 30px;
+
+            background-color: $color-blanco;
+            border-top: 1px solid $color-bordes;
+            border-bottom: 1px solid $color-bordes;
+
+            // Imagenes
+            .product-main__change-img {
+                padding: 20px;
+                // Inputs
+                // map
+                $inputs: (
+                    product-main__change-img-one: img-one,
+                    product-main__change-img-two: img-two,
+                    product-main__change-img-three: img-three,
+                    product-main__change-img-four: img-four,
+                    product-main__change-img-five: img-five,
+                    product-main__change-img-six: img-six,
+                    product-main__change-img-seven: img-seven,
+                    product-main__change-img-eight: img-eight
+                );
+                // each
+                @each $input, $img in $inputs {
+                    ##{$input} {
+                        display: none;
+                        &:checked {
+                            ~ .#{$img} {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+
+                // Cont. de imagen
+                .product-main-change-img__cont-img-main {
+                    width: 100%;
+
+                    margin-left: auto;
+                    margin-right: auto;
+
+                    position: relative;
+
+                    padding-bottom: 100%;
+
+                    // imagen
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        left: 0;
+                        bottom: 0;
+                        margin: auto;
+
+                        opacity: 0;
+                    }
+                    // imagen principal
+                    .img-main {
+                        opacity: 1;
+                    }
+                }
+
+                // Swicth
+                .product-main-change-img__switch {
+                    width: 100%;
+                    margin-top: 20px;
+                    // scroll
+                    .product-main-change-img__switch-scroll {
+                        overflow-x: auto;
+                        padding-bottom: 10px;
+                        // sroll
+                        &::-webkit-scrollbar {
+                            height: 7px;
+                            width: 7px;
+                            background-color: #aaa;
+                            border-radius: 10px;
+                        }
+                        &::-webkit-scrollbar-thumb {
+                            background-color: $color-azul-oscuro;
+                            border-radius: 10px;
+                            &:hover {
+                                background-color: $color-celeste;
+                            }
+                        }
+                        // Contenido
+                        .product-main-change-img-switch__content {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 150%;
+                            max-width: 700px;
+                            // label
+                            label {
+                                flex-basis: 10%;
+                                max-width: 75px;
+                                cursor: pointer;
+                                // imagen
+                                img {
+                                    max-width: 100%;
+                                    display: block;
+                                }
+                            }       
+                        }
+                    }             
+                }
+            }
+            // Texto
+            .product-main__cont-text {
+                padding: 20px;
+                // Titulo
+                .product-main-cont-text__tittle {
+                    // h1
+                    h1 {
+                        font-size: 23px;
+                        color: $color-azul-oscuro;
+
+                        margin: 10px 0;
+                    }
+                    // lista
+                    ul {
+                        // elemento de lista
+                        li {
+                            // first child
+                            &:first-child {
+                                color: $color-letra-gris;
+                                margin: 0 0 14px 0;
+                            }
+                            // demas listas
+                            color: $color-letra-gris;
+                            margin: 0 0 14px 8px;
+                            font-size: 16px;
+                            // anchor
+                            a {
+                                color: $color-azul-oscuro;
+                            }
+                        }
+                    }
+                    // redes
+                    .product-main-cont-text__redes {
+                        display: none;
+                    }
+                }
+                // linea
+                .product-main__hr {
+                    margin: 25px 0;
+                }
+                // Metodo de pago
+                .product-main-cont-text__metod {
+                    margin: 35px 0;
+                    // parrafo
+                    p {
+                        font-size: 16px;
+                        margin-bottom: 13px;
+                        color: $color-azul-oscuro;
+                    }
+
+                    // Inputs
+                    // map
+                    $pagos: (
+                        metod-full: product-main-cont-text__label-metod-full,
+                        metod-deposit: product-main-cont-text__label-metod-deposit
+                    );  
+                    // each
+                    @each $input, $label in $pagos {
+                        ##{$input} {
+                            display: none;
+                            &:checked {
+                                ~ .#{$label} {
+                                    outline: 1px solid $color-celeste;
+                                    border: 1px solid $color-celeste;
+                                    color: $color-celeste;
+                                }
+                            }
+                        }
+                    }
+                    // label
+                    label {
+                        cursor: pointer;
+                        padding: 8px 17px;
+                        color: $color-letra-gris;
+                        border: 1px solid $color-bordes;
+                        border-radius: 3px;
+                    }
+                    .product-main-cont-text__label-metod-full {
+                        margin-right: 7px;
+                    }
+                }
+                // Precio
+                .product-main-cont-text__price {
+                    width: 100%;
+                    margin: 35px 0;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    // texto
+                    .product-main-cont-text-price__text {
+                        font-size: 16px;
+                        color: $color-azul-oscuro;
+                        margin-right: 32px;
+                        font-weight: 600;
+                    }
+                    // numero
+                    .product-main-cont-text-price__number {
+                        font-size: 25px;
+                        color: $color-celeste;
+                    }
+                }
+                // Pago
+                .product-main-cont-text__payment {
+                    width: 100%;
+                    margin-bottom: 35px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
+                    // Boton
+                    .product-main-cont-text-payment__button {
+                        flex-basis: 100%;
+                        padding: 15px 0;
+                        margin-bottom: 20px;
+
+                        font-size: 14.5px;
+                        font-weight: 600;
+                        letter-spacing: 0.5px;
+
+                        cursor: pointer;
+
+                        color: $color-blanco;
+                        background-color: $color-celeste;
+                        
+                        // hover
+                        &:hover {
+                            filter: brightness(1.1);
+                        }
+
+                        // extend
+                        &--blue {
+                            background-color: $color-azul-oscuro;
+                            margin: 0;
+                        }
+                    }
+                }
+                // Compartir
+                .product-main-cont-text__share {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    // texto
+                    .product-main-cont-text-share__text {
+                        font-size: 16px;
+                        color: $color-azul-oscuro;
+                        font-weight: 600;
+                    }
+                    // redes
+                    .product-main-cont-text-share__redes {
+                        flex-basis: 35%;
+                        max-width: 155px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content:space-between;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+        // Container del texto
+        .product-main-container-text__details {
+            padding: 30px 20px;
+            background-color: $color-blanco;
+            border-top: 1px solid $color-bordes;
+            border-bottom: 1px solid $color-bordes;
+            // h3
+            h3 {
+                margin-bottom: 30px;
+                font-size: 19px;
+                color: $color-azul-oscuro;
+            }
+            // parrafo
+            p {
+                line-height: 1.8;
+                color: $color-letra-gris;
+                margin-bottom: 15px;
+            }
+        }
+    }
+} 
+/* --- --- Responsive Producto Principal --- --- */ 
+/* --- Responsive 640px --- *//* Producto Principal */
+@media screen and (min-width:640px) {
+    
+}

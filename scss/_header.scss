@@ -1,0 +1,435 @@
+/* --- --- Header --- --- */ 
+header {
+    max-width: 100%;
+    background-color: $color-azul-oscuro;
+
+    position: relative;
+
+    // input checked // aparecer navigation links
+    #header__navigation-links-input {
+        display: none;
+    }
+    // input checked // aparecer navigation search
+    #header__navigation-search-input {
+        display: none;
+    }
+
+    // Barra de navegación
+    .navigation {
+        width: 95%;
+        margin: auto;
+        padding: 20px 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        // label // aparecer navigation links // responsive
+        .navigation__navigation-links-label {
+            display: none;
+        }
+
+        // Logo
+        .navigation__brand {
+            flex-basis: 11%;
+            min-width: 142.734px;
+            flex-shrink: 0;
+            // imagen
+            img {
+                max-width: 100%;
+                display: block;
+            }
+        }
+
+        // Buscador
+        .navigation__search {
+            flex-basis: 69%;
+            flex-shrink: 5;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;          
+
+            .navigation-search__cont-input {
+                flex-basis: 93%;
+
+                display: flex;
+                justify-content: center;
+                align-items: stretch;
+
+                // input
+                .navigation-search__input {
+                    width: 94%;
+                    padding: 10px 15px;
+
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $color-letra-gris;
+
+                    border: none;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+
+                // icono
+                .navigation-search__icon {
+                    width: 6%;
+                    min-width: 46.547px;
+                    padding: 10px 0;
+
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    background-color: $color-celeste;
+                    i {
+                        margin: 0 12px;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        // Opciones del usuario
+        .navigation__user {
+            flex-basis: 20%;
+            flex-shrink: 0;
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            // label // aparecer buscador // responsive
+            .navigation-user__navigation-search-label {
+                display: none;
+            }
+
+            // Cuenta
+            .navigation-user__account {
+                flex-basis: 50%;
+                // anchor icono responsive
+                .navigation-user-account__a-icon {
+                    display: none;
+                }
+                // anchor
+                .navigation-user-account__a {
+                    font-size: 18px;
+                    color: $color-blanco;
+                }
+            }
+            // Carrito
+            .navigation-user__cart {
+                flex-basis: 50%;
+                flex-shrink: 0;
+                // anchor icono responsive
+                .navigation-user-cart__a-icon {
+                    display: none;
+                }
+                // anchor
+                .navigation-user-cart__a {
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    // texto
+                    .navigation-user-cart-a__text {
+                        margin: 0 20px 0 0;
+
+                        font-size: 18px;
+                        color: $color-blanco;
+                    }
+                }
+            }
+        }
+    }
+
+    // Barra de busqueda // responsive
+    .navigation__search--responsive {
+        width: 100%;
+        padding: 0 0 13px 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+
+        position: relative;
+
+        background-color: $color-azul-oscuro;
+
+        // ocultar
+        display: none;
+        
+        animation: aparecerTop 0.3s ease-out 1 normal none;
+        // Animación
+        @keyframes aparecerTop {
+            0% {
+                transform: translateY(-90%);
+                z-index: -1;
+            }
+            100% {
+                transform: translateY(0);
+                z-index: -1;
+            }
+        }
+
+        .navigation-search__cont-input--responsive {
+            flex-basis: 92%;
+
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+
+            animation: aparecer 0.5s linear 1 normal forwards;
+            // Animación
+            @keyframes aparecer {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            // input
+            .navigation-search__input--responsive {
+                width: 94%;
+                padding: 10px 15px;
+
+                font-size: 16px;
+                font-weight: 500;
+                color: $color-letra-gris;
+
+                border: none;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+
+            // icono
+            .navigation-search__icon--responsive {
+                width: 6%;
+                min-width: 46.547px;
+                padding: 10px 0;
+
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                background-color: $color-celeste;
+                // icon
+                i {
+                    margin: 0 12px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    // links
+    .navigation-links {
+        background-color: $color-blanco;
+
+        border-top: 1px solid $color-bordes;
+        border-bottom: 1px solid $color-bordes;
+        // lista
+        .navigation-links__ul {
+            padding: 20px 0;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            // elemento de lista
+            li {
+                margin: 0 43px;
+                // anchor
+                a {
+                    color: $color-letra-gris;
+                    transition: all 0.2s ease-in;
+                    // hover
+                    &:hover {
+                        color: $color-celeste;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* --- --- Responsive Header --- --- */
+/* --- Responsive 1275px --- */ 
+@media screen and (max-width: 1275px) {
+    // Header
+    header {
+        // Barra de navegación
+        .navigation {
+            // Buscador
+            .navigation__search {
+                flex-basis: 77%;
+                flex-shrink: 5;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }    
+            // Opciones del usuario
+            .navigation__user {
+                flex-basis: 12%;
+                min-width: 108.969px;
+
+                justify-content: center;
+                align-items: center;
+                // Cuenta
+                .navigation-user__account {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // Icono de cuenta
+                    .navigation-user-account__a-icon {
+                        display: block;
+                    }
+                    // Texto
+                    .navigation-user-account__a {
+                        display: none;
+                    }
+                }
+                // Carrito
+                .navigation-user__cart {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    // anchor responsive
+                    .navigation-user-cart__a-icon {
+                        display: block;
+                    }
+                    // anchor
+                    .navigation-user-cart__a {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+/* --- Responsive 995px --- */ 
+@media screen and (max-width: 995px) {
+    header {
+        background-color: transparent;
+        // input checked // aparecer navigation links
+        #header__navigation-links-input {
+            // cheked
+            &:checked {
+                ~ .navigation-links {
+                    display: block;
+                }
+            }
+        }
+        // Barra de navegación
+        .navigation {
+            width: 100%;
+            padding: 20px 25.625px;
+            margin: 0;
+            background-color: $color-azul-oscuro;
+            // label // aparecer navigation links // responsive
+            .navigation__navigation-links-label {
+                display: block;
+                flex-basis: 5%;
+                min-width: 44.500px;
+                // icon
+                i {
+                    cursor: pointer;
+                }
+            }
+            // Buscador
+            .navigation__search {
+                flex-basis: 66%;
+            } 
+        }
+        // Navigation links
+        .navigation-links {
+            display: none;
+
+            position: relative;
+            z-index: 1;
+
+            border: none;
+            border-bottom: 1px solid $color-bordes;
+
+
+            animation: agrandar 0.2s linear 1 normal none;
+            // animación
+            @keyframes agrandar {
+                0% {
+                    transform: translateY(-100%);
+                    z-index: -1;
+                }
+                100% {
+                    transform: translateY(0);
+                    z-index: -1;
+                }
+            }
+
+            // lista
+            .navigation-links__ul {
+                padding: 0 0 0 20px;
+
+                flex-direction: column;
+                align-items: flex-start;
+                // elementos de lista
+                li {
+                    padding: 20px 0; 
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+/* --- Responsive 640px --- */ 
+@media screen and (max-width: 640px) {
+    header {
+        background-color: transparent;
+        #header__navigation-search-input {
+            &:checked  {
+                ~ .navigation__search--responsive {
+                    display: flex;
+                }
+            }
+        }
+        // Barra de busqueda
+        .navigation {
+            width: 100%;
+            padding: 10px 9px 10px 20px;
+            margin: 0;
+            background-color: $color-azul-oscuro;
+            // Logo
+            .navigation__brand {
+                margin-right: auto;
+                min-width: 100px;
+            }
+            // Buscador
+            .navigation__search {
+                display: none;
+            }
+            // Opciones del usuario
+            .navigation__user {
+                flex-basis: 25%;
+                min-width: 141.969px;
+                // label // aparecer buscador // responsive
+                .navigation-user__navigation-search-label {
+                    display: block;
+                    flex-basis: 33%;
+                    // icon
+                    i {
+                        cursor: pointer;
+                    }
+                }
+                // Cuenta
+                .navigation-user__account {
+                    display: block;
+                    flex-basis: 33%;
+                }
+                // Carrito
+                .navigation-user__cart {
+                    display: block;
+                    flex-basis: 33%;
+                    
+                }
+            }
+        }
+    }
+}

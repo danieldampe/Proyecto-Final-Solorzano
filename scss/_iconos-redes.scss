@@ -1,0 +1,41 @@
+/* --- --- Icono de Redes --- --- */
+* {
+    @mixin redSocial($color, $padding) {
+        display: inline-block;
+        padding: $padding;
+        border-radius: 1000px;
+        background-color: #c9cdcf;
+        cursor: pointer;
+        // icon
+        i {
+            font-size: 14px;
+            color: $color-blanco;
+        }
+        transition: background 0.3s linear;
+        // hover
+        &:hover {
+            background-color: $color;
+        }
+    }
+
+    // facebook 
+    .cont-facebook {
+        @include redSocial(#3b5998, 6px 11px)
+    }
+    // pinterest
+    .cont-pinterest {
+        @include redSocial(#E60023, 6px 11px);
+    }
+    // twitter
+    .cont-twitter {
+        @include redSocial(#00acee, 6px 8px);
+    }
+    // instagram
+    .cont-instagram {
+        @include redSocial(#b0238f, 6px 9px)
+    }
+    // mail 
+    .cont-mail {
+        @include redSocial(#555, 6px 8px);
+    }
+}

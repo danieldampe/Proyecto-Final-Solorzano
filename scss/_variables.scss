@@ -1,0 +1,78 @@
+// Variables
+$color-blanco: #fff;
+$color-negro: #000;
+$color-azul-oscuro: #1e2d7d;
+$color-celeste: #00badb;
+$color-letra-gris: #677279;
+$color-bordes: #e1e3e4;
+$color-blanco-body: #f3f5f6;
+
+// Mixin
+
+// Cartas
+@mixin Carta {
+    // No tiene ancho definido
+    background-color: $color-blanco;
+} 
+@mixin CartaAnchor {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+@mixin CartaContImg {
+    width: 100%;
+    padding-bottom: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    // imagen
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+
+        transition: opacity 0.1s linear;
+    }
+    // imagen hover
+    .img-hover {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+    }
+    // efecto hover
+    &:hover {
+        img {
+            opacity: 0;
+        }
+        .img-hover {
+            opacity: 1;
+        } 
+    } 
+}
+@mixin CardName {
+    font-size: 15px;
+    font-weight: 600;
+
+    color: $color-azul-oscuro;
+
+    margin-top: 18px;
+    margin-bottom: 18px;
+
+    transition: color 0.2s linear;
+    // hover
+    &:hover {
+        color: $color-celeste;
+    }
+}
+@mixin CardPrice {
+    font-size: 20px;
+    color: $color-celeste;
+    margin-bottom: 45px;
+}

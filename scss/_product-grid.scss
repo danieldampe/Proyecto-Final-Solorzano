@@ -1,0 +1,150 @@
+/* --- --- Product Grid --- --- */
+// main
+main {
+    // Productos Grid
+    .product-grid {
+        width: 100%;
+        padding: 0 20px;
+        margin: 50px 0;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 240px) 1fr repeat(2, 240px);
+        row-gap: 20px;
+
+        // celda
+        .product-grid__cont-img {
+            overflow: hidden;
+            // anchor
+            a {
+                position: relative;
+
+                // efecto hover
+                &:hover {
+                    > img {
+                        transform: scale(1.07);
+                    }
+                }
+                // imagen
+                img {
+                    max-width: 100%;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-fit: cover;
+                    object-position: center center;
+                    // efecto hover
+                    transition: all 0.8s ease-in;
+                }
+                // Nombre del producto
+                .product-grid-cont-img__box-name {
+                    padding: 2px 28px;
+
+                    text-align: center;
+                    font-weight: 600;
+                    font-size: 15px;
+                    line-height: 3;
+
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    margin-right: 25px;
+                    margin-bottom: 22px;
+
+                    // Boton 1
+                    background-color: #eed300;
+                    color: #000;
+                    // Boton 2
+                    &--kiramei {
+                        @extend .product-grid-cont-img__box-name;
+                        background-color: #7d1e37;
+                        color: #fff;
+                    }
+                    // Boton 3
+                    &--geartlinger {
+                        @extend .product-grid-cont-img__box-name;
+                        background-color: #e9bf14;
+                        color: #61614f;
+                    }
+                    // Boton 4
+                    &--giffard {
+                        @extend .product-grid-cont-img__box-name;
+                        background-color: #b50caa;
+                        color: #fff;
+                    }
+                    // Boton 5
+                    &--genm {
+                        @extend .product-grid-cont-img__box-name;
+                        background-color: #9903ca;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* --- --- Responsive del Product Grid --- --- */ 
+/* --- Responsive 650px --- */
+@media screen and (min-width: 650px) {
+    // main
+    main {
+        // Productos Grid
+        .product-grid {
+            padding: 0 45px;
+        }
+    }
+}
+/* --- Responsive 1060px --- */ 
+@media screen and (min-width: 1060px) {
+    // main
+    main {
+        // Productos Grid
+        .product-grid {
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            place-items: center center;
+            row-gap: 0px;
+            // celda
+            .product-grid__cont-img {
+                width: 95%;
+                // Primera celda
+                &:first-child {
+                    place-self: start start;
+                }
+                // segunda celda
+                &:nth-child(2) {
+                    place-self: start end;
+                }
+                // Celda central
+                &:nth-child(3) {
+                    width: 100%;
+                    grid-row: 1/3;
+                    grid-column: 2/3;
+                }
+                // Celda cuatro
+                &:nth-child(4) {
+                    place-self: end start;
+                }
+                // Celda cinco
+                &:nth-child(5) {
+                    place-self: end end;
+                }
+                // anchor
+                a {
+                    .product-grid-cont-img__box-name {
+                        // centrar div absolute
+                        width: max-content;
+                        height: max-content;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        margin: auto auto 30px auto;
+                    }
+                }
+            }
+        }
+    }
+}
