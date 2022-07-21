@@ -423,6 +423,21 @@ header .navigation-links .navigation-links__ul li a:hover {
     flex-basis: 33%;
   }
 }
+/* --- Responsive 330px --- */
+@media screen and (max-width: 330px) {
+  header i {
+    font-size: 18px;
+  }
+  header .navigation .navigation__navigation-links-label {
+    min-width: 30px;
+  }
+  header .navigation .navigation__brand {
+    min-width: 60px;
+  }
+  header .navigation .navigation__user {
+    min-width: 100px;
+  }
+}
 /* --- --- Producto Principal --- --- */
 main .product-main {
   width: 100%;

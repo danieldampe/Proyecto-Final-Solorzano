@@ -433,3 +433,29 @@ header {
         }
     }
 }
+
+/* --- Responsive 330px --- */ 
+@media screen and (max-width: 330px) {
+    // header
+    header {
+        // Todos los iconos
+        i {
+            font-size: 18px;
+        }
+        // Barra de busqueda
+        .navigation {
+            // Label Navigation
+            .navigation__navigation-links-label {
+                min-width: 30px;
+            }
+            // Logo
+            .navigation__brand {
+                min-width: 60px;
+            }
+            // Opciones de usuario
+            .navigation__user {
+                min-width: 100px;
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+// Variables
+@import "variables";
+// Iconos de redes
+@import "iconos-redes";
+
+/* --- --- Reset --- --- */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    // body    
+    body {
+        background-color: $color-blanco-body;
+    }
+    main {
+        width: 100%;
+    }
+    // listas
+    ul {
+        margin: 0;
+        padding-left: 0;
+    }
+    li {
+        list-style: none;
+    }
+    // anchor
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    // input
+    input {
+        outline: none
+    }
+    // button
+    button {
+        border: none;
+    }
+    // iconos
+    i {
+        font-size: 23px;
+        color: $color-blanco;
+    }
+}
+
+// Header
+@import "header.scss";
+// main 
+main {
+    .formulario {
+        width: 80%;
+        max-width: 386px;
+        margin: auto;
+        margin-bottom: 100px;
+        .fomulario__text {
+            p {
+                color: $color-azul-oscuro;
+                font-size: 25px;
+                text-align: center;
+                font-weight: 600;
+            }
+        }
+    }
+    .btn-primary {
+        &:hover {
+            filter: brightness(1.1);
+        }
+    }
+}
+// Footer
+@import "footer";
+.footer {
+    .footer-redes {
+        i {
+            height: 18px;
+        }
+    }
+}
